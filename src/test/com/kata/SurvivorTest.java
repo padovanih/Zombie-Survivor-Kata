@@ -26,4 +26,10 @@ public class SurvivorTest {
         Survivor zombie = new Survivor(" ");
         Assert.assertEquals(zombie.getTurns(), 3);
     }
+    
+    @Test
+    public void playerHaveWeapons() {
+        Survivor survivor = new Survivor(" ");
+        Assert.assertTrue(survivor.numWeapons() <= 5);
+    }
 }
