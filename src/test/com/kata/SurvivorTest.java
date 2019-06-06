@@ -28,8 +28,18 @@ public class SurvivorTest {
     }
     
     @Test
-    public void playerHaveWeapons() {
+    public void playerHandleEquipment() {
         Survivor survivor = new Survivor(" ");
-        Assert.assertTrue(survivor.numWeapons() <= 5);
+        Equipment equip1 = new BaseballBat();
+        Equipment equip2 = new FryingPan();
+        Equipment equip3 = new Katana();
+        Equipment equip4 = new Pistol();
+        Equipment equip5 = new BottledWater();
+        
+        survivor.pickEquipment(equip1);
+        survivor.pickEquipment(equip2);
+        survivor.pickEquipment(equip3);
+        survivor.pickEquipment(equip4);
+        survivor.pickEquipment(equip5);
     }
 }
