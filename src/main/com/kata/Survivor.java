@@ -36,4 +36,8 @@ public class Survivor {
     public void pickEquipment(Equipment equipment) {
         this.equipments.add(equipment);
     }
+
+    public List<Equipment> getEquipments() {
+        return this.equipments;
+    }
 }

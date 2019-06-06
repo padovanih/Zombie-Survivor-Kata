@@ -2,7 +2,7 @@ package com.kata;
 
 import com.kata.equipments.*;
 import junit.framework.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class SurvivorTest {
     @Test
@@ -42,5 +42,24 @@ public class SurvivorTest {
         survivor.pickEquipment(equip3);
         survivor.pickEquipment(equip4);
         survivor.pickEquipment(equip5);
+
+        Assert.assertEquals(survivor.getEquipments().size(), 5);
+    }
+
+    @Test(expected = FullCarryingCapacity.class)
+    public void shouldThrowWhenTryingToCarryTooMuchItems() {
+        Survivor survivor = new Survivor(" ");
+        Equipment equip1 = new BaseballBat();
+        Equipment equip2 = new FryingPan();
+        Equipment equip3 = new Katana();
+        Equipment equip4 = new Pistol();
+        Equipment equip5 = new BottledWater();
+
+        survivor.pickEquipment(equip1);
+        survivor.pickEquipment(equip2);
+        survivor.pickEquipment(equip3);
+        survivor.pickEquipment(equip4);
+        survivor.pickEquipment(equip5);
+        survivor.pickEquipment(equip3);
     }
 }
