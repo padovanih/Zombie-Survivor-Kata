@@ -20,4 +20,10 @@ public class SurvivorTest {
         zombie.wound();
         Assert.assertFalse(zombie.isAlive());
     }
+
+    @Test
+    public void playerMustHave3Turns() {
+        Survivor zombie = new Survivor(" ");
+        Assert.assertEquals(zombie.getTurns(), 3);
+    }
 }
