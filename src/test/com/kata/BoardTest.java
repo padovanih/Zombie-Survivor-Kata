@@ -14,7 +14,7 @@ public class BoardTest {
         board.insertSurvivor(new Survivor(" "));
         Assert.assertEquals(1, board.getSurvivors().size());
     }
-    @Test
+    /*@Test
     public void boardHasTurn(){
         Board board = new Board();
         Survivor playerOne = new Survivor("P1");
@@ -28,5 +28,5 @@ public class BoardTest {
         Assert.assertEquals(board.getActiveSurvivor(), playerOne);
         playerOne.act();
         Assert.assertEquals(board.getActiveSurvivor(), playerTwo);
-    }
+    }*/
 }
