@@ -1,5 +1,6 @@
 package com.kata;
 
+import com.kata.equipments.*;
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 
