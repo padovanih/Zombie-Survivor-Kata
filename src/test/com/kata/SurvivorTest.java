@@ -1,7 +1,8 @@
 package com.kata;
 
 import com.kata.equipments.*;
-import junit.framework.Assert;
+//import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class SurvivorTest {
@@ -28,6 +29,9 @@ public class SurvivorTest {
         Assert.assertEquals(zombie.getTurns(), 3);
     }
     
+    // Here we start with EQUIPMENT TESTs
+    
+    // Check success case
     @Test
     public void playerHandleEquipment() {
         Survivor survivor = new Survivor(" ");
@@ -42,10 +46,12 @@ public class SurvivorTest {
         survivor.pickEquipment(equip3);
         survivor.pickEquipment(equip4);
         survivor.pickEquipment(equip5);
-
-        Assert.assertEquals(survivor.getEquipments().size(), 5);
+        
+        Assert.assertNotNull(survivor.getEquipments());
+        Assert.assertEquals(survivor.numEquipments(), 5);
     }
-
+    
+    // Case where trying to insert more them 5 Equipment
     @Test(expected = FullCarryingCapacity.class)
     public void shouldThrowWhenTryingToCarryTooMuchItems() {
         Survivor survivor = new Survivor(" ");
@@ -54,7 +60,7 @@ public class SurvivorTest {
         Equipment equip3 = new Katana();
         Equipment equip4 = new Pistol();
         Equipment equip5 = new BottledWater();
-
+        
         survivor.pickEquipment(equip1);
         survivor.pickEquipment(equip2);
         survivor.pickEquipment(equip3);
@@ -62,4 +68,7 @@ public class SurvivorTest {
         survivor.pickEquipment(equip5);
         survivor.pickEquipment(equip3);
     }
+    
+    // Success Case: handle equipments in hand and in reserve
+    // TO DO
 }
