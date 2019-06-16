@@ -20,6 +20,11 @@ public class Survivor {
 		this.turns = 3;
 	}
 	
+	@Override
+	public boolean equals(Object survivor2) {
+		return this.name.equals( ((Survivor)survivor2).getName() );
+	}
+	
 	public LinkedList getEquipments() {
 		return backpack.getEquipments();
 	}
@@ -102,5 +107,4 @@ public class Survivor {
 			this.backpack.decreaseCapacity();
 		}
 	}
-	
 }
