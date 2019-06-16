@@ -20,21 +20,20 @@ public class Survivor {
 		this.turns = 3;
 	}
 	
-	public String getEquipmentsAsString() {
-	    return backpack.getEquipmentsAsString();
-	}
-	
 	public LinkedList getEquipments() {
 		return backpack.getEquipments();
 	}
 	
-	
-	public LinkedList<Equipment> getInReserveEquipments() {
-		return backpack.getInReserveEquipments();
+	public String getEquipmentsAsString() {
+	    return backpack.getEquipmentsAsString();
 	}
 	
 	public LinkedList<Equipment> getInHandEquipments() {
 		return backpack.getInHandEquipments();
+	}
+	
+	public LinkedList<Equipment> getInReserveEquipments() {
+		return backpack.getInReserveEquipments();
 	}
 	
 	public int getTurns() {

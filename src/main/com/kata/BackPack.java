@@ -44,24 +44,24 @@ public class BackPack {
 				inReserveEquipments.toString();
 	}
 	
-	public LinkedList<Equipment> getInReserveEquipments() {
-		return inReserveEquipments;
-	}
-	
 	public LinkedList<Equipment> getInHandEquipments() {
 		return inHandEquipments;
+	}
+	
+	public LinkedList<Equipment> getInReserveEquipments() {
+		return inReserveEquipments;
 	}
 	
 	private int getNumOfEquipments() {
 		return inReserveEquipments.size() + inHandEquipments.size();
 	}
 	
-	private boolean inHandIsFull() {
-		return inHandEquipments.size()==2;
-	}
-	
 	private boolean inHandIsEmpty() {
 		return inHandEquipments.isEmpty();
+	}
+	
+	private boolean inHandIsFull() {
+		return inHandEquipments.size()==2;
 	}
 	
 	private boolean inReserveIsEmpty() {
@@ -102,6 +102,15 @@ public class BackPack {
 		return inReserveEquipments.size() == getCapacity() - numEquipmentsInHand();
 	}
 	
+	public void saveEquipmentInReserve(Equipment equipment) throws EquimentDoesntExists {
+		// Verify if equipment is not in Hand
+		if ( !inHandEquipments.contains(equipment) ) {
+			throw new EquimentDoesntExists("Equipment: "+ equipment.toString() +" is not available in Hand.");
+		}
+		
+		inHandEquipments.remove( equipment );
+		inReserveEquipments.add( equipment );
+	}
 	
 	public void useEquipmentInHand(Equipment equipment) throws EquimentDoesntExists {
 		// Verify is the equipment is available in reserve.
@@ -117,16 +126,6 @@ public class BackPack {
 		
 		inReserveEquipments.remove( equipment );
 		inHandEquipments.add( equipment );
-	}
-	
-	public void saveEquipmentInReserve(Equipment equipment) throws EquimentDoesntExists {
-		// Verify if equipment is not in Hand
-		if ( !inHandEquipments.contains(equipment) ) {
-			throw new EquimentDoesntExists("Equipment: "+ equipment.toString() +" is not available in Hand.");
-		}
-		
-		inHandEquipments.remove( equipment );
-		inReserveEquipments.add( equipment );
 	}
 	
 	public void useEquipmentInHand(Equipment equipmentToAddInHand, Equipment equipmentToSave) {
