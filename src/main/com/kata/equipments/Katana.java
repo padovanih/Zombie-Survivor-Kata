@@ -4,11 +4,6 @@ public class Katana implements Equipment {
     final String name = "Katana";
     
     @Override
-    public void use() {
-        /* probably slash someone */
-    }
-    
-    @Override
     public boolean equals(Object equipment) {
         if(name == ((Equipment)equipment).getName()){
             return true;
@@ -24,5 +19,10 @@ public class Katana implements Equipment {
     @Override
     public String toString() {
         return "Katana";
+    }
+    
+    @Override
+    public void use() {
+        /* probably slash someone */
     }
 }

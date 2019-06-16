@@ -4,11 +4,6 @@ public class BottledWater implements Equipment {
     final String name = "BottledWater";
     
     @Override
-    public void use() {
-        /* probably refresh someone */
-    }
-    
-    @Override
     public boolean equals(Object equipment) {
         if(name == ((Equipment)equipment).getName()){
             return true;
@@ -24,5 +19,10 @@ public class BottledWater implements Equipment {
     @Override
     public String toString() {
         return "BottledWater";
+    }
+    
+    @Override
+    public void use() {
+        /* probably refresh someone */
     }
 }
