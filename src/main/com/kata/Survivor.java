@@ -36,6 +36,10 @@ public class Survivor {
 		return backpack.getInReserveEquipments();
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	
 	public int getTurns() {
 		return this.turns;
 	}
