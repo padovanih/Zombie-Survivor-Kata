@@ -8,6 +8,6 @@ public class InitialTest {
     @Test
     public void shouldSumFirstToSecondArgument() {
         Initial test = new Initial();
-        Assert.assertEquals(3, test.sum(1, 4));
+        Assert.assertEquals(5, test.sum(1, 4));
     }
 }
